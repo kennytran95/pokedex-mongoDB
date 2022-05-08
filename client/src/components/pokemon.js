@@ -755,3 +755,5 @@ let pokemon = [
     "img": "http://vignette3.wikia.nocookie.net/nintendo/images/b/bf/Mew.png/revision/latest?cb=20141002090523&path-prefix=en"
   }
 ]
+
+export default pokemon;

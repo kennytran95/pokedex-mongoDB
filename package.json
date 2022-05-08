@@ -4,7 +4,8 @@
   "description": "Fullstack Review",
   "main": "webpack.config.js",
   "scripts": {
-    "webpack" : "webpack",
+    "start": "nodemon server/index.js",
+    "webpack" : "webpack --config ./webpack.config.js -w",
     "dev": "npm run webpack -- --mode development --watch",
     "build": "npm run webpack -- --mode production"
   },
@@ -28,10 +29,10 @@
     "underscore": "^1.13.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.8.3",
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.1.0",
     "nodemon": "^2.0.2",
     "webpack": "^4.44.1",
