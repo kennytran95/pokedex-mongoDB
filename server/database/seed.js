@@ -5,16 +5,9 @@ const pokemonData = require('../../pokemon.json');
 
 const seedData = () => {
   for(let i = 0; i < pokemonData.length; i++) {
-    Pokemon.create(pokemonData[i])
+    Pokemon.Pokemon.create(pokemonData[i])
       .catch(err => console.log(err, 'Error!'))
-      .then(() => mongoose.connection.close())
+      .then(() => console.log('Success!'))
   }
 }
-
 seedData();
-
-// pokemonData.forEach((pokemonInd) => {
-//   Pokemon.create(pokemonInd)
-//     .catch(err => console.log(err))
-//     .then(() => {mongoose.connection.close()})
-// })

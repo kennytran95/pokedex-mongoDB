@@ -1,15 +1,28 @@
 import React from 'react';
-import pokemon from './pokemon.js';
 import Pokemons from './Pokemons.jsx';
 import ShowAll from './ShowAll.jsx';
 import Types from './Types.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemons: pokemon
+      pokemons: []
     }
+  }
+
+  componentDidMount() {
+    axios.get('/pokemon', (data) => {
+      console.log('Nice')
+    })
+      .catch((err) => console.log(err))
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          pokemons: data.data
+        })
+      })
   }
 
   render() {
