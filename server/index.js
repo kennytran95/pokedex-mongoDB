@@ -19,8 +19,14 @@ app.get('/pokemon', (req, res) => {
       console.log(result);
       res.send(result);
     })
-
 });
+
+app.delete('/pokemon/:name', (req, res) => {
+  let name = req.params;
+  db.remove(name.name)
+    .catch(err => res.status(500).send(err))
+    .then(() => res.status(200).send('DELETED'))
+})
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port: ${PORT}`);

@@ -20,9 +20,16 @@ const Pokemon = mongoose.model('Pokemon', pokemonSchema);
 // }
 
 const getPokedex = () => {
-  return Pokemon.find().exec();
+  return Pokemon.find().sort().exec();
 }
+
+const remove = (name) => {
+  return Pokemon.deleteOne({name: name});
+}
+
+
 
 module.exports.Pokemon = Pokemon;
 // module.exports.addPokemon = addPokemon;
 module.exports.getPokedex = getPokedex;
+module.exports.remove = remove;

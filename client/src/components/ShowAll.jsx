@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ShowAll = () => {
+const ShowAll = ( { show } ) => {
   return(
-    <button>Show All</button>
+    <button onClick={(event) => show()}>Show All</button>
   )
 }
 
